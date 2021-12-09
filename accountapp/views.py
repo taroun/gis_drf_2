@@ -13,5 +13,5 @@ def hello_world_template(request):
 # 로직 처리부분
 @api_view()
 def hello_world(request):
-    return Response({'message': 'Hello World!'})
+    return Response({'message': 'Return Text!'})
 
