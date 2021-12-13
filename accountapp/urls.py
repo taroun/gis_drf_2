@@ -1,7 +1,7 @@
 from django.urls import path
 from rest_framework.authtoken import views
 
-from accountapp.views import hello_world, hello_world_template, AccountCreateTemplate, AccountCreateAPIView, ListUsers, \
+from accountapp.views import hello_world, hello_world_template, AccountCreateTemplate, AccountCreateAPIView, \
     AccountLoginView
 
 app_name = 'accountapp'
