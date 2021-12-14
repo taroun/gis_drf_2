@@ -27,12 +27,13 @@ function update_account(pk) {
         headers: {
             Authorization: decodeURIComponent(getCookie('drf_token')),
         }
+    })
         .then(function (response) {
             // handle success
             console.log(response);
             window.location.href = '/accounts/retrieve_template/' + pk ;
         })
-    })
+
         .catch(function (error) {
             // handle error
             console.log(error);

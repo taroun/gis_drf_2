@@ -10,7 +10,7 @@ function delete_account(pk) {
             // handle success
             console.log(response);
 
-            window.location.href = '/accounts/logout/';
+            window.location.href = '/accounts/logout_template/';
         })
         .catch(function (error) {
             // handle error
