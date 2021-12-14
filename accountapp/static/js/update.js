@@ -17,7 +17,7 @@ function initialize (pk) {
       });
 }
 
-function update_account (pk) {
+function update_account(pk) {
     axios.patch('/accounts/update/' + pk , {
         username: document.getElementById('username').value,
         email: document.getElementById('email').value,
