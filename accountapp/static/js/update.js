@@ -1,4 +1,3 @@
-
 function initialize (pk) {
     axios.get('/accounts/retrieve/' + pk )
       .then(function (response) {
@@ -25,16 +24,13 @@ function update_account(pk) {
       .then(function (response) {
         // handle success
         console.log(response);
-
         window.location.href = '/accounts/retrieve_template/' + pk ;
       })
       .catch(function (error) {
         // handle error
         console.log(error);
-
         document.getElementById('alert_box').innerHTML
              = "<div class='btn btn-danger rounded-pill px-5'>update가 실패 했습니</div>"
-
       })
       .then(function () {
         // always executed
