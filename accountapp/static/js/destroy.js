@@ -1,7 +1,7 @@
 function delete_account(pk) {
     axios({
         method: 'delete',
-        url: '/accounts/delete/' + pk,
+        url: '/accounts/' + pk,
         headers: {
             Authorization: decodeURIComponent(getCookie('drf_token')),
         }

@@ -1,6 +1,6 @@
 
 function initialize (pk) {
-    axios.get('/accounts/retrieve/' + pk )
+    axios.get('/accounts/' + pk )
       .then(function (response) {
         // handle success
         console.log(response);
