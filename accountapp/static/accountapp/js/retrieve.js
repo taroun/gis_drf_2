@@ -6,7 +6,6 @@ function getCookie(name) {
 }
 
 function initialize (pk) {
-    axios.get('/accounts/' + pk )
     axios({
         method: 'get',
         url: '/accounts/' + pk,
