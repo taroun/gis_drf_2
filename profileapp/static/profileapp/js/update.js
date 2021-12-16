@@ -34,7 +34,7 @@ function update_profile(pk) {
         .then(function (response) {
             // handle success
             console.log(response);
-            window.location.href = '/accounts/retrieve_template/' + response.date['owner']['id'];
+            window.location.href = '/accounts/retrieve_template/' + response.date['owner_id'];
         })
 
         .catch(function (error) {
