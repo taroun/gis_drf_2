@@ -7,6 +7,8 @@ function getCookie(name) {
 
 var user_id;
 
+var check = getCookie('drf_token');
+
 axios({
     method: 'get',
     url: '/accounts/token/',
@@ -14,18 +16,17 @@ axios({
         Authorization: decodeURIComponent(getCookie('drf_token'))
     }
 })
-.then(function (response) {
-    // 성공했을 경우
-    user_id = response.data['id'];
-    document.getElementById('signup_button').innerHTML =
-    "<a href=\"/accounts/retrieve_template/" + user_id + "\">\n" +
-    "                MyPage\n" +
-    "            </a>";
-})
+    .then(function (response) {
+        // 성공했을 경우
+        user_id = response.data['id'];
+        if (check !== undefined) {
+            document.getElementById('signup_button').innerHTML =
+            "<a href=\"/accounts/retrieve_template/" + user_id + "\">\n" +
+            "                MyPage\n" +
+            "            </a>";
+        }
+    })
 
-
-
-var check = getCookie('drf_token');
 
 if (check !== undefined) {
     document.getElementById('login_button').innerHTML =
