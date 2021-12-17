@@ -59,3 +59,7 @@ class ArticleRUDAPIView(RetrieveUpdateDestroyAPIView):
 
         return Response(result_dict)
 
+
+class MagicGridTemplateView(TemplateView):
+    template_name = 'articleapp/magic_grid.html'
+
