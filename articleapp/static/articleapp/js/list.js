@@ -1,11 +1,11 @@
 function getCookie(name) {
-    let matches = document.cookie.match(new RegExp(
-        "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
-    ));
-    return matches ? decodeURIComponent(matches[1]) : undefined;
+  let matches = document.cookie.match(new RegExp(
+    "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+  ));
+  return matches ? decodeURIComponent(matches[1]) : undefined;
 }
 
-function initialize () {
+function initialize() {
     axios({
         method: 'get',
         url: '/articles/list/',
@@ -21,13 +21,15 @@ function initialize () {
                 document.getElementById('article_list').innerHTML
                     +=
                     "<div>" +
-                    "<a href=\"/articles/retrieve_template/" + response.data['results'][i]['id'] + ""\">" +
+                    "<a href=\"/articles/retrieve_template/" + response.data['results'][i]['id'] + "\">" +
                     "<img style=\"width: 100%; border-radius: 1rem;\"" +
                     " src=\"" + response.data['results'][i]['image'] + "\"" +
                     " alt=\"\">" +
-                    "</a>" +
+                    "</a>\"" +
                     "</div>";
             }
+
+            // paginator 기반 page 객체 생성
 
         })
         .catch(function (error) {
