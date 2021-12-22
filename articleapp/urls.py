@@ -9,7 +9,7 @@ app_name = 'articleapp'
 urlpatterns = [
     path('create_template/', ArticleCreateTemplateView.as_view(), name='create_template'),
     path('list/', ArticleListTemplateView.as_view(), name='list_template'),
-    path('', ArticleListCreateAPIView.as_view(), name='listcreate'),
+    path('', ArticleListCreateAPIView.as_view(), name='LC'),
 
     path('retrieve_template/<int:pk>', ArticleRetrieveTemplateView.as_view(), name='retrieve_template'),
     path('update_template/<int:pk>', ArticleUpdateTemplateView.as_view(), name='update_template'),

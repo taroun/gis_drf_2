@@ -61,7 +61,7 @@ function initialize() {
                     "</a>";
             }
 
-            document.getElementById('article_list').style.height='';
+            document.getElementById('article_list').style.height='100%';
         })
         .catch(function (error) {
             // handle error
