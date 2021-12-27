@@ -11,7 +11,7 @@ from django.core.files.uploadedfile import InMemoryUploadedFile
 def generate_thumbnail_celery_lag(profile_id):
     from profileapp.models import Profile
 
-    target_profile = Profile.objrcts.get(pk=profile_id)
+    target_profile = Profile.objects.get(pk=profile_id)
 
     time.sleep(10)
 
@@ -34,6 +34,6 @@ def generate_thumbnail_celery_lag(profile_id):
                                                 'image/jpeg',
                                                 sys.getsizeof(output),
                                                 None)
-    target_profile.save()
+    target_profile.save(async_func=True)
 
 
